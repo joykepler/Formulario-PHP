@@ -4,6 +4,7 @@ if(isset($_POST['submit'])) {
     include_once('config.php');
 
     $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
     $sexo = $_POST['sexo'];
@@ -12,8 +13,10 @@ if(isset($_POST['submit'])) {
     $estado = $_POST['estado'];
     $endereco = $_POST['endereco'];
 
-    $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, telefone, sexo, data_nasc, cidade, estado, endereco) 
-    VALUES ('$nome', '$email', '$telefone', '$sexo', '$data_nasc', '$cidade', '$estado', '$endereco')");
+    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,sexo,data_nasc,cidade,estado,endereco) 
+    VALUES ('$nome','$senha','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$endereco')");
+
+    header('Location: login.php');
 }
 
 ?>
@@ -110,6 +113,7 @@ if(isset($_POST['submit'])) {
 </style>
 </head>
 <body>
+    <a href="home.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
@@ -118,6 +122,11 @@ if(isset($_POST['submit'])) {
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
