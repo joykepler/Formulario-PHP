@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SITE JOY</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-image: url(fundo.jpg);
+    background-image: url(img/fundo.jpg);
     background-size: 100%;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -44,7 +43,7 @@ input {
     background: none;
 }
 
-.input-usuario {
+.input-email {
     display: flex;
     align-items: center;
     border: 1px solid white;
@@ -53,7 +52,7 @@ input {
     border-radius: 15px;
 }
 
-#usuario {
+.email {
     width: 250px;
     border: none;
     outline: none;
@@ -62,12 +61,12 @@ input {
     color: white;
 } 
 
-.input-usuario i {
+.input-email i {
     font-size: 18px;
     color: white;
 }
 
-#usuario::placeholder {
+.email::placeholder {
     color: white;
 }
 
@@ -80,7 +79,7 @@ input {
     border-radius: 15px;
 }
 
-#senha {
+.senha {
     width: 250px;
     border: none;
     outline: none;
@@ -94,11 +93,11 @@ input {
     color: white;
 }
 
-#senha::placeholder {
+.senha::placeholder {
     color: white;
 }
 
-#enviar {
+.enviar {
     background-color: white;
     border: none;
     border-radius: 15px;
@@ -107,23 +106,24 @@ input {
     width: 280px;
 }
 
-#enviar:hover {
+.enviar:hover {
     background-color: rgb(216, 216, 216);
 }
-</style>
+    </style>
 </head>
 <body>
-    <form>
-        <h1>Login</h1>
-        <div class="input-usuario">
-            <input type="text" placeholder="Usuário" id="usuario">
-            <i class='bx bx-user'></i>
-        </div>
-        <div class="input-senha">
-            <input type="password" placeholder="Senha" id="senha">
-            <i class='bx bxs-lock-alt'></i>
-        </div>
-        <input type="submit" id="enviar">
-    </form>  
+<a href="home.php">Voltar</a>
+<form action="testLogin.php" method="POST">
+    <h1>Login</h1>
+    <div class="input-email">
+        <input type="text" name="email" placeholder="Email" class="email">
+        <i class='bx bx-user'></i>
+    </div>
+    <div class="input-senha">
+        <input type="password" placeholder="Senha" name="senha" class="senha">
+        <i class='bx bxs-lock-alt'></i>
+    </div>
+    <input type="submit" name="submit" class="enviar" value="Enviar">  
+</form>
 </body>
 </html>
