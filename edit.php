@@ -2,7 +2,6 @@
 
 if(!empty($_GET['id'])) 
 {
-    
     include_once('config.php');
 
     $id = $_GET['id'];
@@ -30,7 +29,10 @@ if(!empty($_GET['id']))
     {
         header('Location: sistema.php');
     }
-
+}
+else
+{
+    header('Location: sistema.php');
 }
 
 ?>
@@ -138,49 +140,51 @@ if(!empty($_GET['id']))
                 <legend><b>Formulário de Clientes</b></legend>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" value="<?php echo $nome ?>" required>
+                    <input type="text" name="nome" id="nome" class="inputUser" value=<?php echo $nome;?> required>
                     <label for="nome" class="labelInput">Nome completo</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="inputUser" value="<?php echo $senha ?>" required>
+                    <input type="password" name="senha" id="senha" class="inputUser" value=<?php echo $senha;?> required>
                     <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" value="<?php echo $email ?>" required>
+                    <input type="text" name="email" id="email" class="inputUser" value=<?php echo $email;?> required>
                     <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" value="<?php echo $telefone ?>" required>
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" value=<?php echo $telefone;?> required>
                     <label for="telefone" class="labelInput">Telefone</label>
                 </div>
                 <p>Sexo:</p>
-                <input type="radio" id="feminino" name="sexo" value="feminino" <?php echo ($sexo == 'f') ? 'checked' : '' ?> required>
+                <input type="radio" id="feminino" name="sexo" value="feminino" <?php echo ($sexo == 'f') ? 'checked' : '' ;?> required>
                 <label for="feminino">Feminino</label>
                 <br>
-                <input type="radio" id="masculino" name="sexo" value="masculino" <?php echo ($sexo == 'm') ? 'checked' : '' ?> required>
+                <input type="radio" id="masculino" name="sexo" value="masculino" <?php echo ($sexo == 'm') ? 'checked' : '' ;?> required>
+                required>
                 <label for="masculino">Masculino</label>
                 <br><br>
                 <label for="data_nasc"><b>Data de Nascimento:</b></label>
-                <input type="date" name="data_nasc" id="data_nasc" value="<?php echo $data_nasc ?>" r required>
+                <input type="date" name="data_nasc" id="data_nasc" value=<?php echo $data_nasc;?> required>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" value="<?php echo $cidade ?>" required>
+                    <input type="text" name="cidade" id="cidade" class="inputUser" value=<?php echo $cidade;?> required>
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" value="<?php echo $estado ?>" required>
+                    <input type="text" name="estado" id="estado" class="inputUser" value=<?php echo $estado;?> required>
                     <label for="estado" class="labelInput">Estado</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" value="<?php echo $endereco ?>" required>
+                    <input type="text" name="endereco" id="endereco" class="inputUser" value=<?php echo $endereco;?> required>
                     <label for="endereco" class="labelInput">Endereço</label>
                 </div>
                 <br><br>
+                <input type="hidden" name="id" value="<?php echo $id ?>">
                 <input type="submit" name="update" id="update">
             </fieldset>
         </form>
