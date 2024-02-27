@@ -49,6 +49,7 @@
         }
         .bemvindo {
             margin: 4rem;
+            margin-left: 30px;
         }
 
     </style>
