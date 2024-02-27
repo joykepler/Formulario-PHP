@@ -110,10 +110,24 @@ if(isset($_POST['submit'])) {
          cursor: pointer;
          border-radius: 10px;
      }      
+
+     .voltar-botao {
+        display: flex;
+        margin-left: 20px;
+     }
+
+     .voltar {
+        text-decoration: none;
+        opacity: 70%;
+        color: white;
+        margin-top: 30px;
+     }
 </style>
 </head>
 <body>
-    <a href="home.php">Voltar</a>
+    <div class="voltar-botao">
+    <a href="home.php" class="voltar">Voltar</a>
+    </div>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
