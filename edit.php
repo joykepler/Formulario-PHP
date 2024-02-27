@@ -130,10 +130,24 @@ else
      #update:hover {
         opacity: 75%;
      }
+     
+     .voltar-botao {
+        display: flex;
+        margin-left: 20px;
+     }
+
+     .voltar {
+        text-decoration: none;
+        opacity: 70%;
+        color: white;
+        margin-top: 30px;
+     }
 </style>
 </head>
 <body>
-    <a href="sistema.php">Voltar</a>
+    <div class="voltar-botao">
+        <a href="sistema.php" class="voltar">Voltar</a>
+    </div>
     <div class="box">
         <form action="saveEdit.php" method="POST">
             <fieldset>
