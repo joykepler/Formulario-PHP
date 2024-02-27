@@ -163,7 +163,6 @@ else
                 <label for="feminino">Feminino</label>
                 <br>
                 <input type="radio" id="masculino" name="sexo" value="masculino" <?php echo ($sexo == 'm') ? 'checked' : '' ;?> required>
-                required>
                 <label for="masculino">Masculino</label>
                 <br><br>
                 <label for="data_nasc"><b>Data de Nascimento:</b></label>
