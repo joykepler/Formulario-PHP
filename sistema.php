@@ -9,12 +9,16 @@
         header('Location: login.php');       
     }
     $logado = $_SESSION['email'];
-
-    $sql = "SELECT * FROM usuarios ORDER BY id DESC";
-
+    if(!empty($_GET['search']))
+    {
+        $data = $_GET['search'];
+        $sql = "SELECT * FROM usuarios WHERE id LIKE '%$data%' or nome LIKE '%$data%' or email LIKE '%$data%' ORDER BY id DESC";
+    }
+    else
+    {
+        $sql = "SELECT * FROM usuarios ORDER BY id DESC";
+    }
     $result = $conexao->query($sql);
-
-    // print_r($result);
 ?>
 
 <!DOCTYPE html>
@@ -60,8 +64,8 @@
     ?>
 </div>
 <div class="flex justify-center mb-16 gap-3">
-    <input type="search" placeholder="Pesquisar" id="pesquisar" class="rounded w-64">
-    <button>
+    <input type="search" placeholder="Pesquisar" id="pesquisar" class="rounded w-64 text-black p-2">
+    <button onclick="searchData()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
   <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
         </svg>
@@ -117,4 +121,19 @@
   </table>
 </div>
 </body>
+<script>
+    let search = document.getElementById('pesquisar');
+
+    search.addEventListener("keydown", function(event) {
+        if (event.key === "Enter")
+        {
+            searchData();
+        }
+    });
+
+    function searchData()
+    {
+        window.location = 'sistema.php?search='+search.value;
+    }
+</script>
 </html>
