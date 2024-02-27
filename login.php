@@ -109,10 +109,23 @@ input {
 .enviar:hover {
     background-color: rgb(216, 216, 216);
 }
+
+.voltar-botao {
+    display: flex;
+    margin-left: 20px;
+    justify-content: center;
+}
+
+.voltar {
+    text-decoration: none;
+    opacity: 70%;
+    color: white;
+    margin-top: 30px;
+    margin-right: 30px;
+}
     </style>
 </head>
 <body>
-<a href="home.php">Voltar</a>
 <form action="testLogin.php" method="POST">
     <h1>Login</h1>
     <div class="input-email">
@@ -125,5 +138,8 @@ input {
     </div>
     <input type="submit" name="submit" class="enviar" value="Enviar">  
 </form>
+<div class="voltar-botao">
+    <a href="home.php" class="voltar">Voltar</a>
+</div>
 </body>
 </html>
